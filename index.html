@@ -15,19 +15,25 @@
             font-family: 'Roboto', sans-serif;
         }
   </style>
+  <script defer>
+    window.addEventListener('load', () => {
+        loadImage('https://www.samparkk.com/images/logo.jpg', '.image-container')
+        .then(() => console.log('Image loaded successfully'))
+        .catch(err => console.error('Image failed to load', err));
+    });
+  </script>
  </head>
  <body class="bg-gray-100">
   <div class="flex h-screen flex-col md:flex-row">
    <!-- Sidebar -->
    <div class="w-full md:w-1/4 bg-white border-r border-gray-200 md:block hidden">
-    <div class="p-4 border-b border-gray-200">
-     <h1 class="text-xl font-bold">
-      Samparkk
-     </h1>
+    <div class="p-4 border-b border-gray-200 flex items-center mb-4">
+        <img alt="Logo" class="w-14 h-14 rounded mr-5" src="https://www.samparkk.com/images/logo.jpg"/>
+        <h1 class="text-xl font-bold ">Samparkk</h1>
     </div>
     <div class="p-4 overflow-y-auto">
      <div class="flex items-center mb-4">
-      <img alt="Profile picture of contact 1" class="w-12 h-12 rounded-full mr-3" src="https://placehold.co/50x50"/>
+      <img alt="Profile picture of contact 1" class="w-12 h-12 rounded-full mr-3 image-container" src=""/>
       <div>
        <h2 class="text-lg font-semibold">
         Contact 1
@@ -38,7 +44,7 @@
       </div>
      </div>
      <div class="flex items-center mb-4">
-      <img alt="Profile picture of contact 2" class="w-12 h-12 rounded-full mr-3" src="https://placehold.co/50x50"/>
+      <img alt="Profile picture of contact 2" class="w-12 h-12 rounded-full mr-3 image-container" src=""/>
       <div>
        <h2 class="text-lg font-semibold">
         Contact 2
@@ -49,7 +55,7 @@
       </div>
      </div>
      <div class="flex items-center mb-4">
-      <img alt="Profile picture of contact 3" class="w-12 h-12 rounded-full mr-3" src="https://placehold.co/50x50"/>
+      <img alt="Profile picture of contact 3" class="w-12 h-12 rounded-full mr-3 image-container" src=""/>
       <div>
        <h2 class="text-lg font-semibold">
         Contact 3
@@ -60,7 +66,7 @@
       </div>
      </div>
      <div class="flex items-center mb-4">
-      <img alt="Profile picture of contact 4" class="w-12 h-12 rounded-full mr-3" src="https://placehold.co/50x50"/>
+      <img alt="Profile picture of contact 4" class="w-12 h-12 rounded-full mr-3 image-container" src=""/>
       <div>
        <h2 class="text-lg font-semibold">
         Contact 4
@@ -71,7 +77,7 @@
       </div>
      </div>
      <div class="flex items-center mb-4">
-      <img alt="Profile picture of contact 5" class="w-12 h-12 rounded-full mr-3" src="https://placehold.co/50x50"/>
+      <img alt="Profile picture of contact 5" class="w-12 h-12 rounded-full mr-3 image-container" src=""/>
       <div>
        <h2 class="text-lg font-semibold">
         Contact 5
@@ -87,7 +93,7 @@
    <div class="flex-1 flex flex-col">
     <div class="flex items-center justify-between p-4 border-b border-gray-200 bg-white">
      <div class="flex items-center">
-      <img alt="Profile picture of current chat contact" class="w-12 h-12 rounded-full mr-3" src="https://placehold.co/50x50"/>
+      <img alt="Profile picture of current chat contact" class="w-12 h-12 rounded-full mr-3 image-container" src=""/>
       <div>
        <h2 class="text-lg font-semibold">
         Current Chat Contact
@@ -106,7 +112,7 @@
     </div>
     <div class="flex-1 p-4 overflow-y-auto">
      <div class="flex mb-4">
-      <img alt="Profile picture of current chat contact" class="w-10 h-10 rounded-full mr-3" src="https://placehold.co/50x50"/>
+      <img alt="Profile picture of current chat contact" class="w-10 h-10 rounded-full mr-3 image-container" src=""/>
       <div class="bg-gray-200 p-3 rounded-lg">
        <p>
         Hello! How are you?
@@ -119,10 +125,10 @@
         I'm good, thanks! How about you?
        </p>
       </div>
-      <img alt="Profile picture of the user" class="w-10 h-10 rounded-full ml-3" src="https://placehold.co/50x50"/>
+      <img alt="Profile picture of the user" class="w-10 h-10 rounded-full ml-3 image-container" src=""/>
      </div>
      <div class="flex mb-4">
-      <img alt="Profile picture of current chat contact" class="w-10 h-10 rounded-full mr-3" src="https://placehold.co/50x50"/>
+      <img alt="Profile picture of current chat contact" class="w-10 h-10 rounded-full mr-3 image-container" src=""/>
       <div class="bg-gray-200 p-3 rounded-lg">
        <p>
         I'm doing well, thank you!
@@ -175,4 +181,37 @@
    </div>
   </div>
  </body>
+ <script>
+    const imageCache = {};
+
+    function loadImage(url, selector) {
+        // Check if image is already cached
+        if (imageCache[url]) {
+            insertImage(imageCache[url], selector);
+            return;
+        }
+
+        // Create new image and load from CDN
+        const img = new Image();
+        img.onload = () => {
+            // Cache the loaded image
+            imageCache[url] = img;
+            insertImage(img, selector);
+        };
+        img.onerror = () => {
+            console.error(`Error loading image from ${url}`);
+        };
+        img.src = url;
+    }
+
+    function insertImage(imageNode, selector) {
+        // Select all target elements
+        const targets = document.querySelectorAll(selector);
+        
+        // Clone the image node for each target
+        targets.forEach(target =>{
+            target.src = imageNode.src;
+        });
+    }
+ </script>
 </html>
