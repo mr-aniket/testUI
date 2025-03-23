@@ -1,267 +1,177 @@
-<html>
+<html lang="en">
  <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <title>
-   samparkk
+   Telegram Clone
   </title>
   <script src="https://cdn.tailwindcss.com">
   </script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
   <style>
-   :root {
-            --purple: #8A2BE2;
-            --light-purple: #9b5fe0;
-            --white: #ffffff;
-            --dark-bg: #0a0615;
-        }
-
-        body {
+   body {
             font-family: 'Roboto', sans-serif;
-            background-color: var(--dark-bg);
-            color: var(--white);
-        }
-
-        .bg-dark {
-            background-color: var(--dark-bg);
-        }
-
-        .text-light {
-            color: var(--white);
-        }
-
-        .text-muted {
-            color: var(--light-purple);
-        }
-
-        .border-light {
-            border-color: var(--light-purple);
-        }
-
-        .bg-hover:hover {
-            background-color: var(--light-purple);
-            color: var(--dark-bg);
-        }
-
-        .bg-primary {
-            background-color: var(--purple);
-        }
-
-        .bg-primary-hover:hover {
-            background-color: var(--light-purple);
-        }
-
-        .ring-primary:focus {
-            ring-color: var(--light-purple);
         }
   </style>
  </head>
- <body>
-  <!-- Phone Number Page -->
-  <div class="flex items-center justify-center min-h-screen bg-dark" id="phone-page">
-   <div class="bg-primary p-8 rounded-lg shadow-lg w-full max-w-md">
-    <h2 class="text-2xl font-bold mb-6 text-center text-light">
-     Enter Phone Number
-    </h2>
-    <form id="phone-form">
-     <div class="mb-4">
-      <label class="block text-light" for="phone">
-       Phone Number
-      </label>
-      <input class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 ring-primary bg-dark text-light" id="phone" placeholder="+1234567890" type="text"/>
+ <body class="bg-gray-100">
+  <div class="flex h-screen flex-col md:flex-row">
+   <!-- Sidebar -->
+   <div class="w-full md:w-1/4 bg-white border-r border-gray-200 md:block hidden">
+    <div class="p-4 border-b border-gray-200">
+     <h1 class="text-xl font-bold">
+      Samparkk
+     </h1>
+    </div>
+    <div class="p-4 overflow-y-auto">
+     <div class="flex items-center mb-4">
+      <img alt="Profile picture of contact 1" class="w-12 h-12 rounded-full mr-3" src="https://placehold.co/50x50"/>
+      <div>
+       <h2 class="text-lg font-semibold">
+        Contact 1
+       </h2>
+       <p class="text-sm text-gray-600">
+        Last message from contact 1
+       </p>
+      </div>
      </div>
-     <button class="w-full bg-dark text-light py-2 rounded-lg bg-primary-hover transition duration-300" type="submit">
-      Next
-     </button>
-    </form>
-   </div>
-  </div>
-  <!-- OTP Page -->
-  <div class="hidden flex items-center justify-center min-h-screen bg-dark" id="otp-page">
-   <div class="bg-primary p-8 rounded-lg shadow-lg w-full max-w-md">
-    <h2 class="text-2xl font-bold mb-6 text-center text-light">
-     Enter OTP
-    </h2>
-    <form id="otp-form">
-     <div class="mb-4">
-      <label class="block text-light" for="otp">
-       OTP
-      </label>
-      <input class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 ring-primary bg-dark text-light" id="otp" placeholder="Enter OTP" type="text"/>
+     <div class="flex items-center mb-4">
+      <img alt="Profile picture of contact 2" class="w-12 h-12 rounded-full mr-3" src="https://placehold.co/50x50"/>
+      <div>
+       <h2 class="text-lg font-semibold">
+        Contact 2
+       </h2>
+       <p class="text-sm text-gray-600">
+        Last message from contact 2
+       </p>
+      </div>
      </div>
-     <button class="w-full bg-dark text-light py-2 rounded-lg bg-primary-hover transition duration-300" type="submit">
-      Verify
-     </button>
-    </form>
+     <div class="flex items-center mb-4">
+      <img alt="Profile picture of contact 3" class="w-12 h-12 rounded-full mr-3" src="https://placehold.co/50x50"/>
+      <div>
+       <h2 class="text-lg font-semibold">
+        Contact 3
+       </h2>
+       <p class="text-sm text-gray-600">
+        Last message from contact 3
+       </p>
+      </div>
+     </div>
+     <div class="flex items-center mb-4">
+      <img alt="Profile picture of contact 4" class="w-12 h-12 rounded-full mr-3" src="https://placehold.co/50x50"/>
+      <div>
+       <h2 class="text-lg font-semibold">
+        Contact 4
+       </h2>
+       <p class="text-sm text-gray-600">
+        Last message from contact 4
+       </p>
+      </div>
+     </div>
+     <div class="flex items-center mb-4">
+      <img alt="Profile picture of contact 5" class="w-12 h-12 rounded-full mr-3" src="https://placehold.co/50x50"/>
+      <div>
+       <h2 class="text-lg font-semibold">
+        Contact 5
+       </h2>
+       <p class="text-sm text-gray-600">
+        Last message from contact 5
+       </p>
+      </div>
+     </div>
+    </div>
    </div>
-  </div>
-  <!-- Chat List Page -->
-  <div class="hidden min-h-screen flex flex-col" id="chat-list-page">
-   <div class="flex justify-between items-center p-4 bg-dark border-b border-light">
-    <h2 class="text-xl font-bold text-light">
-     Chats
-    </h2>
-    <div>
-     <button class="text-light hover:text-muted transition duration-300 mr-4" id="settings-button">
-      <i class="fas fa-cog">
+   <!-- Main Chat Area -->
+   <div class="flex-1 flex flex-col">
+    <div class="flex items-center justify-between p-4 border-b border-gray-200 bg-white">
+     <div class="flex items-center">
+      <img alt="Profile picture of current chat contact" class="w-12 h-12 rounded-full mr-3" src="https://placehold.co/50x50"/>
+      <div>
+       <h2 class="text-lg font-semibold">
+        Current Chat Contact
+       </h2>
+       <p class="text-sm text-gray-600">
+        Online
+       </p>
+      </div>
+     </div>
+     <div class="flex items-center space-x-4">
+      <i class="fas fa-search text-gray-600">
       </i>
-     </button>
-     <button class="text-light hover:text-muted transition duration-300" id="logout-button">
-      <i class="fas fa-sign-out-alt">
+      <i class="fas fa-ellipsis-v text-gray-600">
       </i>
-     </button>
+     </div>
     </div>
-   </div>
-   <div class="flex-1 flex flex-col md:flex-row-reverse">
-    <div class="w-full md:w-1/3 bg-dark border-l border-light">
-     <div class="p-4">
-      <div class="flex items-center mb-4 cursor-pointer bg-hover p-2 rounded-lg transition duration-300">
-       <img alt="Profile picture of John Doe" class="w-12 h-12 rounded-full mr-4" height="50" src="https://storage.googleapis.com/a1aa/image/nVkr-HToUmoeTTiQ7dqCO_Ikcna0H0C0yE3PNdkvtCk.jpg" width="50"/>
-       <div>
-        <h3 class="font-bold text-light">
-         John Doe
-        </h3>
-        <p class="text-muted">
-         Hey, how are you?
-        </p>
-       </div>
+    <div class="flex-1 p-4 overflow-y-auto">
+     <div class="flex mb-4">
+      <img alt="Profile picture of current chat contact" class="w-10 h-10 rounded-full mr-3" src="https://placehold.co/50x50"/>
+      <div class="bg-gray-200 p-3 rounded-lg">
+       <p>
+        Hello! How are you?
+       </p>
       </div>
-      <div class="flex items-center mb-4 cursor-pointer bg-hover p-2 rounded-lg transition duration-300">
-       <img alt="Profile picture of Jane Smith" class="w-12 h-12 rounded-full mr-4" height="50" src="https://storage.googleapis.com/a1aa/image/wzbZDmi1bhZRA8Vyteljl4Dl0VQCZ-qL_VsLDXGe9e8.jpg" width="50"/>
-       <div>
-        <h3 class="font-bold text-light">
-         Jane Smith
-        </h3>
-        <p class="text-muted">
-         Let's catch up later!
-        </p>
-       </div>
+     </div>
+     <div class="flex mb-4 justify-end">
+      <div class="bg-blue-500 text-white p-3 rounded-lg">
+       <p>
+        I'm good, thanks! How about you?
+       </p>
       </div>
-      <div class="flex items-center mb-4 cursor-pointer bg-hover p-2 rounded-lg transition duration-300">
-       <img alt="Profile picture of Alice Johnson" class="w-12 h-12 rounded-full mr-4" height="50" src="https://storage.googleapis.com/a1aa/image/Q1obH5rEcGMO_BA_XTtum7Ox7yKhf3xlGcZuJWHNvao.jpg" width="50"/>
-       <div>
-        <h3 class="font-bold text-light">
-         Alice Johnson
-        </h3>
-        <p class="text-muted">
-         Can you send me the files?
-        </p>
-       </div>
+      <img alt="Profile picture of the user" class="w-10 h-10 rounded-full ml-3" src="https://placehold.co/50x50"/>
+     </div>
+     <div class="flex mb-4">
+      <img alt="Profile picture of current chat contact" class="w-10 h-10 rounded-full mr-3" src="https://placehold.co/50x50"/>
+      <div class="bg-gray-200 p-3 rounded-lg">
+       <p>
+        I'm doing well, thank you!
+       </p>
       </div>
      </div>
     </div>
-    <div class="flex-1 bg-dark flex items-center justify-center">
-     <p class="text-muted">
-      Select a chat to start messaging
-     </p>
+    <div class="p-4 border-t border-gray-200 bg-white">
+     <div class="flex items-center">
+      <input class="flex-1 border border-gray-300 rounded-lg p-2 mr-2" placeholder="Type a message" type="text"/>
+      <button class="bg-blue-500 text-white p-2 rounded-lg">
+       <i class="fas fa-paper-plane">
+       </i>
+      </button>
+     </div>
     </div>
    </div>
   </div>
-  <!-- Chat Page -->
-  <div class="hidden min-h-screen flex flex-col" id="chat-page">
-   <div class="flex justify-between items-center p-4 bg-dark border-b border-light">
-    <div class="flex items-center">
-     <img alt="Profile picture of John Doe" class="w-12 h-12 rounded-full mr-4" height="50" src="https://storage.googleapis.com/a1aa/image/nVkr-HToUmoeTTiQ7dqCO_Ikcna0H0C0yE3PNdkvtCk.jpg" width="50"/>
-     <h3 class="font-bold text-light">
-      John Doe
-     </h3>
-    </div>
-    <button class="text-light hover:text-muted transition duration-300" id="back-to-chat-list">
-     <i class="fas fa-arrow-left">
+  <!-- Mobile Sidebar -->
+  <div class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 md:hidden">
+   <div class="flex justify-around p-2">
+    <button class="flex flex-col items-center text-gray-600">
+     <i class="fas fa-home text-xl">
      </i>
+     <span class="text-xs">
+      Home
+     </span>
     </button>
-   </div>
-   <div class="flex-1 p-4 overflow-y-auto bg-dark">
-    <div class="mb-4">
-     <div class="bg-primary text-light p-3 rounded-lg inline-block">
-      Hey, how are you?
-     </div>
-    </div>
-    <div class="mb-4 text-right">
-     <div class="bg-light-purple text-dark-bg p-3 rounded-lg inline-block">
-      I'm good, thanks! How about you?
-     </div>
-    </div>
-    <div class="mb-4">
-     <div class="bg-primary text-light p-3 rounded-lg inline-block">
-      Doing well, just working on a project.
-     </div>
-    </div>
-   </div>
-   <div class="p-4 bg-dark border-t border-light flex items-center">
-    <input class="flex-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 ring-primary bg-dark text-light" placeholder="Type a message" type="text"/>
-    <button class="ml-4 text-light hover:text-muted transition duration-300">
-     <i class="fas fa-paper-plane">
+    <button class="flex flex-col items-center text-gray-600">
+     <i class="fas fa-search text-xl">
      </i>
+     <span class="text-xs">
+      Search
+     </span>
+    </button>
+    <button class="flex flex-col items-center text-gray-600">
+     <i class="fas fa-comments text-xl">
+     </i>
+     <span class="text-xs">
+      Chats
+     </span>
+    </button>
+    <button class="flex flex-col items-center text-gray-600">
+     <i class="fas fa-user text-xl">
+     </i>
+     <span class="text-xs">
+      Profile
+     </span>
     </button>
    </div>
   </div>
-  <!-- Settings Page -->
-  <div class="hidden min-h-screen flex items-center justify-center bg-dark" id="settings-page">
-   <div class="bg-dark p-8 rounded-lg shadow-lg w-full max-w-md">
-    <h2 class="text-2xl font-bold mb-6 text-center text-light">
-     Settings
-    </h2>
-    <form id="settings-form">
-     <div class="mb-4">
-      <label class="block text-light" for="username">
-       Username
-      </label>
-      <input class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 ring-primary bg-dark text-light" id="username" placeholder="Enter your username" type="text"/>
-     </div>
-     <div class="mb-4">
-      <label class="block text-light" for="email">
-       Email
-      </label>
-      <input class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 ring-primary bg-dark text-light" id="email" placeholder="Enter your email" type="email"/>
-     </div>
-     <button class="w-full bg-primary text-light py-2 rounded-lg bg-primary-hover transition duration-300" type="submit">
-      Save
-     </button>
-    </form>
-    <button class="w-full mt-4 bg-gray-500 text-light py-2 rounded-lg hover:bg-gray-600 transition duration-300" id="back-to-chat-list-from-settings">
-     Back
-    </button>
-   </div>
-  </div>
-  <script>
-   document.getElementById('phone-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-            document.getElementById('phone-page').classList.add('hidden');
-            document.getElementById('otp-page').classList.remove('hidden');
-        });
-
-        document.getElementById('otp-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-            document.getElementById('otp-page').classList.add('hidden');
-            document.getElementById('chat-list-page').classList.remove('hidden');
-        });
-
-        document.querySelectorAll('#chat-list-page .flex.items-center').forEach(function(chat) {
-            chat.addEventListener('click', function() {
-                document.getElementById('chat-list-page').classList.add('hidden');
-                document.getElementById('chat-page').classList.remove('hidden');
-            });
-        });
-
-        document.getElementById('back-to-chat-list').addEventListener('click', function() {
-            document.getElementById('chat-page').classList.add('hidden');
-            document.getElementById('chat-list-page').classList.remove('hidden');
-        });
-
-        document.getElementById('settings-button').addEventListener('click', function() {
-            document.getElementById('chat-list-page').classList.add('hidden');
-            document.getElementById('settings-page').classList.remove('hidden');
-        });
-
-        document.getElementById('back-to-chat-list-from-settings').addEventListener('click', function() {
-            document.getElementById('settings-page').classList.add('hidden');
-            document.getElementById('chat-list-page').classList.remove('hidden');
-        });
-
-        document.getElementById('logout-button').addEventListener('click', function() {
-            document.getElementById('chat-list-page').classList.add('hidden');
-            document.getElementById('phone-page').classList.remove('hidden');
-        });
-  </script>
  </body>
 </html>
